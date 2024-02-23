@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - La Cuisine</title>
+    <link rel="stylesheet" href="../../../static/css/home.css"/>
+    <link rel="stylesheet" href="../../../static/css/navbar.css"/>
+</head>
+<body>
+    <!--header-->
+    <div id="navbar">
+        <div class="app__navbar-logo">
+          <a href="/restaurant/"><img src="../../../static/assets/logo1.png" alt="logo" class='logo1' /></a>
+        </div>
+        <ul class='app__navbar-links'>
+          <li class='p__opensans'><a class='p__opensans' href="/restaurant/">Home</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/menu/">Menu</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/contact/">Contact</a></li>
+          </ul>
+          <div class='app__navbar-login'>
+            <a href="/restaurant/book/" class='p__opensans'>Book a table</a>
+          </div>
+          <div class='app_navbar-smallscreen'></div>
+    </div>
+    <!--end header-->
+    <style>
+        .title {
+            width:100%;
+            padding:1rem;
+            background: rgb(54, 52, 46);
+            text-align: center;
+            color:rgb(255, 225, 180);
+            font-family:serif;
+            font-size: 45px;
+          }
+        .bookform {
+            color:#f1e6c5;;
+            font-family: serif;
+            font-size: 14px;
+            width: 60vw;
+            max-width: 500px;
+            min-width: 300px;
+            margin: 1 auto;
+            padding-bottom: 1em;
+            margin-bottom: 8px;
+        }
+        
+        input {
+            background: #252521;
+            font-size: 18px;
+            text-align: center;
+            place-content: center;
+            border: 1px solid #ffe69b95;
+            padding-top: 1em;
+            padding-bottom:0;
+
+        }
+        textarea {
+            background: #252521;
+            font-size: 18px;
+            border: 1px solid #ffe69b95;
+            padding-top: 1em;
+            padding-bottom:1em;
+        }
+        #formbook {
+            text-align: center; 
+            color:aliceblue;
+        }
+        @media screen and (max-width: 650px) {
+        
+            .booktitle {
+              font-size: 30px;
+            }
+        
+        }
+        
+        
+    </style>
+    <h1 class="title">Contact Us</h1>
+    <form id ="formbook" method="POST">
+        {% csrf_token %}
+        <label class="bookform lab" for="customer_name">Your name (optional): </label><br/>
+        <input  class="bookform" type="text" name="name" id="customer_name"/><br/>
+        <label class="bookform lab" for="title">Type of inquiry (customer service concern, food quality, job application, etc.): </label><br/>
+        <input  class="bookform" type="text" name="title" placeholder="Steak was too dry" id="title" required/><br/>
+        <label class="bookform lab" for="description">Detailed description: </label><br/>
+        <textarea  class="bookform" rows="10" cols="30" name="description" placeholder="Today I visited your restaurant..."id="description" required></textarea><br/>
+        <label  class="bookform lab" for="email">Your Email: </label><br/>
+        <input  class="bookform" type="email" placeholder="example@email.com" id="email" name="email" required/><br/>
+        <button style="padding:0;"style="width:25%; padding:10px;" id="submitbutton" class="bookform lab" type="submit">SUBMIT</button><br/>
+        <label class="bookform lab" style="background:rgba(0,0,0,0)">we will contact you within 24 hours after receiving this form</label><br/><br/>
+        <a style="background:rgba(0,0,0,0)" href="/restaurant/"><button type="button" class='custom_button backbutton bookform lab' style="width:20%; padding:3px; height:30px;">Return to Home Page</button></a>
+    </form>
+    
+    </body>
+    </html>

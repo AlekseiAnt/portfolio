@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - La Cuisine</title>
+    <link rel="stylesheet" href="../../../static/css/home.css"/>
+    <link rel="stylesheet" href="../../../static/css/navbar.css"/>
+</head>
+<body>
+     <!--header-->
+     <div id="navbar">
+        <div class="app__navbar-logo">
+          <a href="/restaurant/"><img src="../../../static/assets/logo1.png" alt="logo" class='logo1' /></a>
+        </div>
+        <ul class='app__navbar-links'>
+          <li class='p__opensans'><a class='p__opensans' href="/restaurant/">Home</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/menu/">Menu</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/contact/">Contact</a></li>
+          </ul>
+          <div class='app__navbar-login'>
+            <a href="/restaurant/book/" class='p__opensans'>Book a table</a>
+          </div>
+          <div class='app_navbar-smallscreen'></div>
+    </div>
+    <!--end header-->
+    
+    <!-- style for menu -->
+    <style>
+
+    .menutitle {
+      width:100%;
+      padding:1rem;
+      background: rgb(54, 52, 46);
+      text-align: center;
+      color:rgb(255, 225, 180);
+      font-family:serif;
+      font-size: 60px;
+    }
+    .menudiv {
+      padding:10px;
+    }
+    .menu {
+      float: left;
+      border: 1.5px solid rgb(235, 206, 162);
+      padding: 1rem;
+      margin: 1rem;
+      width:fit-content;
+      height: 30rem;
+
+    }
+    .item_name {
+      color:rgb(207, 182, 145);
+      background: rgba(0,0,0,0);
+    }
+    .menu:hover {
+        cursor: pointer;
+        background: rgb(53, 50, 43);
+        transition: 0.5s;
+        box-shadow: 0 0 5px  #fcedc0, 0 0 25px  #fcedc0, 0 0 50px  #fcedc0, 0 0 200px  #fcedc0;
+    }
+    .price {
+        color:rgb(235, 206, 162);
+        background: rgba(0,0,0,0);
+    }
+    .item_image {
+        width:250px;
+        margin-top: 20%;
+        background: rgba(0,0,0,0);
+      
+    }
+    .book_place {
+      position:fixed;
+      bottom:1%;
+      right:1%;
+      background: rgba(0,0,0,0) !important;
+      margin:0;
+    }
+  .book_button {
+      text-shadow: none;
+      background-color: rgba(208, 188, 129, 0.921);
+      color:#4d483c;
+      font-size: large;
+      letter-spacing: 3px;
+      border-color: rgba(237, 213, 141, 0.921);
+      box-shadow: 0 0 1px  #fcedc0, 0 0 10px  #fcedc0, 0 0 30px  #fcedc0, 0 0 100px  #fcedc0;
+
+    }
+    @media screen and (max-width: 650px) {
+      .item_image {
+        margin: 1%;
+        float:right;
+        height: 100px;
+        width: auto;
+        
+      }
+      .menu {
+        height: auto;
+        width: 80%;
+
+      }
+      .menutitle {
+        font-size: 30px;
+      }
+      .book_place {
+        position:fixed;
+        bottom:0.3%;
+        right:0.3%;
+      }
+  
+  }
+    </style>
+    <!-- end style for menu -->
+
+    <!-- menu -->
+    <h1 class="menutitle">MENU</h1>
+    <div class="menudiv">
+    
+    {% for meal in menuItemsView %}
+
+    <a href="{% url 'menu:menu_item' meal.slug %}">
+      <div class="menu">
+        <img class="item_image" src="{{meal.image.url}}" alt="{{meal}}"/>
+        <h2 class="item_name">{{meal}}</h2>
+        <h3 class="price">$ {{meal.price}}</h3>
+        
+      </div>
+    </a>
+    {% endfor %}
+    </div>
+    
+    <div class="book_place">
+      <form style="background:rgba(0,0,0,0)" action="/restaurant/book/"><button type="submit" class='book_button custom__button'>RESERVE</button></form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cuisine - Home</title>
+    <link rel="stylesheet" href="../../../static/css/home.css"/>
+    <link rel="stylesheet" href="../../../static/css/navbar.css"/>
+    
+</head>
+<body>
+  <!--header-->
+    <div id="navbar">
+        <div class="app__navbar-logo">
+          <a href="/restaurant/"><img src="../../../static/assets/logo1.png" alt="logo" class='logo1' /></a>
+        </div>
+        <ul class='app__navbar-links'>
+          <li class='p__opensans'><a class='p__opensans' href="/restaurant/">Home</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/menu/">Menu</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/contact/">Contact</a></li>
+          </ul>
+          <div class='app__navbar-login'>
+            <a href="/restaurant/book/" class='p__opensans'>Book a table</a>
+          </div>
+          <div class='app_navbar-smallscreen'></div>
+    </div>
+    <!--end header-->
+
+    <!--body-->
+    <style>
+    .book_place {
+        position:fixed;
+        bottom:1%;
+        right:1%;
+        background: rgba(208, 188, 129, 0);
+        margin:0;
+    
+      }
+    .book_button {
+        background:rgba(208, 188, 129, 0.921);
+        background-color: rgba(208, 188, 129, 0.921);
+        color:#4d483c;
+        font-size: large;
+        letter-spacing: 3px;
+        border-color: rgba(237, 213, 141, 0.921);
+        box-shadow: 0 0 1px  #fcedc0, 0 0 10px  #fcedc0, 0 0 30px  #fcedc0, 0 0 100px  #fcedc0;
+  
+      }
+      @media screen and (max-width: 800px) {
+        .app__header {
+            text-align: center;
+            align-content: center;
+        }
+        p, hr {
+          text-align: left;
+        }
+        
+        #contact {
+          align-content: left;
+          text-align: left;
+        }
+    }
+    
+    </style>
+    <div class="app__header app__wrapper section__padding" id="home">
+      <div class="app__wrapper_info">
+        <img id="welcomeImg" src='../../../static/assets/welcome.png' alt='image'/>
+        <h1 class="app__header_h1">Welcome to gastronomic adventure <br/><hr><br/></h1>
+        <p class="p__opensans" id="subtitle" style="font-family:cursive">Best flavours of Paris in the heart of Edmonton</p>
+        <form style="background:rgba(0,0,0,0)" action="/restaurant/menu/"><button type="submit" class='custom__button'>Explore Menu</button></form>
+        
+        <p class="p_opensans" id="contact">If you have any questions, feel free to<a id="aa" href="/restaurant/contact/"><button type="button" class='contact_button'>Contact Us</button></a></p>
+        <div class="book_place">
+          <form style="background:rgba(0,0,0,0)" action="/restaurant/book/"><button type="submit" class='book_button custom__button'>RESERVE</button></form>
+        </div>
+      </div>
+    </div>
+
+    <!--end body-->
+ 
+    
+</body>
+</html>

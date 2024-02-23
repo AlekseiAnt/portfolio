@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{menuOneItemView}} - La Cuisine</title>
+    <link rel="stylesheet" href="../../../static/css/home.css"/>
+    <link rel="stylesheet" href="../../../static/css/navbar.css"/>
+</head>
+<body>
+    <!--header-->
+    <div id="navbar">
+        <div class="app__navbar-logo">
+          <a href="/restaurant/"><img src="../../../static/assets/logo1.png" alt="logo" class='logo1' /></a>
+        </div>
+        <ul class='app__navbar-links'>
+          <li class='p__opensans'><a class='p__opensans' href="/restaurant/">Home</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/menu/">Menu</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/contact/">Contact</a></li>
+          </ul>
+          <div class='app__navbar-login'>
+            <a href="/restaurant/book/" class='p__opensans'>Book a table</a>
+          </div>
+          <div class='app_navbar-smallscreen'></div>
+    </div>
+    <!--end header-->
+
+    <style>
+        #imag {
+            width:500px;
+        }
+        .menu {
+            display:flex;
+            padding: 4%;
+        }
+        .menu_item {
+            float:left;
+            margin-right:2%;
+
+        }
+        .itemtext {
+            margin-left: 30px;
+        }
+        #name {
+            color: rgb(227, 227, 227);
+            font-size: 70px;
+            margin-bottom:0;
+        }
+        #descr {
+            font-family: cursive;
+            color: rgb(255, 225, 180);
+            margin-top:0;
+            margin-left:40px;
+            margin-bottom: 60px;
+        }
+
+        #price {
+            color: rgb(255, 225, 180);
+            margin-top:0;
+        }
+        hr {
+            color:rgba(141, 128, 88, 0.921);
+            width:50%;
+        }
+        #backtomenu{
+            margin-left:40px;
+
+        }
+        .back_button {
+            height:40px;
+        }
+    .book_place {
+        position:fixed;
+        bottom:1%;
+        right:1%;
+        background: rgba(0,0,0,0) !important;
+        margin:0;
+    
+      }
+    .book_button {
+        background-color: rgba(208, 188, 129, 0.921);
+        color:#4d483c;
+        font-size: large;
+        letter-spacing: 3px;
+        border-color: rgba(237, 213, 141, 0.921);
+        box-shadow: 0 0 1px  #fcedc0, 0 0 10px  #fcedc0, 0 0 30px  #fcedc0, 0 0 100px  #fcedc0;
+    }
+    @media screen and (max-width: 800px) {
+
+        #imag {
+            width:300px;
+
+        }
+        .menu {
+            display: block;
+        }
+        .itemtext{
+            margin: 1%;
+        }
+        #name {
+            font-size: 30px;
+        }
+    }
+    </style>
+    <div class="menu">
+        <div class="menuItem">
+            <img id="imag" src="{{menuOneItemView.image.url}}" alt="{{menuOneItemView}}"/>
+        </div>  
+        <div class="menuItem">
+            <h1 id="name" class="itemtext">{{menuOneItemView}}</h1>
+            <h5 id="descr" class="itemtext">{{menuOneItemView.description}}</h5><hr/><br/>
+            <h2 id="price" class="itemtext">price: $ {{menuOneItemView.price}}</h2>
+        </div>
+    </div>
+    <div id="backtomenu">
+        <form style="background:rgba(0,0,0,0)" action="/restaurant/menu/"><button type="submit" class='custom__button back_button'>Back to Menu</button></form>
+    </div>
+    <div class="book_place">
+        <form style="background:rgba(0,0,0,0)" action="/restaurant/book/"><button type="submit" class='book_button custom__button'>RESERVE</button></form>
+    </div>
+    
+</body>
+</html>

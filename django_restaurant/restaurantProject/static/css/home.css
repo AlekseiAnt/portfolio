@@ -1,0 +1,135 @@
+/*body*/
+* {
+    background-color: black;
+    background-image: url("../assets/bg.png");
+}
+
+.app__header_h1{
+    animation: fadeIn 2s;
+    font-family: serif;
+    color: #ffe69b;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 100px;
+    font-size: 90px;
+    font-style: bold;
+}
+
+.app__header-img {
+    width:80%;
+}
+
+button:hover, #submit_book:hover {
+    background:none;
+    transition: 0.5s;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: 1px solid #fcedc0;
+    cursor:pointer;
+    box-shadow: 0 0 5px  #fcedc0, 0 0 25px  #fcedc0, 0 0 50px  #fcedc0, 0 0 200px  #fcedc0;
+}
+
+button, #submit_book{
+    margin:1em;
+    width: 200px;
+    height: 55px;
+    background:#403c32;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #ffe69b;;
+    border: 3px solid #403c32;
+
+    transition: 0.5s;
+
+}
+#welcomeImg {
+    width:500px;
+    float:right;
+    margin-right:4%;
+}
+
+.contact_button {
+    height:30px;
+    margin-top:1rem;
+    background: #403c32;
+    border:1px solid #403c32;
+    color: #ffe69b;
+}
+
+#contact {
+    position:sticky;
+    color:white; 
+    margin-top:10rem; 
+    margin-bottom:0;
+    background-color: #1d1d1d;
+    text-align: center;
+}
+
+hr {
+    width:50%;
+    float:left;
+    margin-bottom:0;
+}
+#aa {
+    background-color: #1d1d1d;
+}
+
+#subtitle {
+    margin-top:0;
+    width: 40%;
+    position: relative;
+    bottom: 90px;
+    right: 10px;
+}
+
+
+@media screen and (max-width: 2000px) {
+    .app__header{
+        margin: 3% ;
+    }
+}
+
+
+@media screen and (max-width: 1400px) {
+    .app__header{
+        margin: 2% ;
+    }
+    .app__header_h1{
+        font-size:60px;
+    }
+    #welcomeImg {
+        width:400px;
+    }
+    
+
+}
+
+@media screen and (max-width: 1000px) {
+    .app__header{
+        margin: 0.5% ;
+    }
+    .app__header_h1{
+        font-size:38px;
+    }
+    #welcomeImg {
+        width:400px;
+    }
+    
+
+}
+@media screen and (max-width: 800px) {
+    .app__header{
+        margin: 0.5% ;
+    }
+    .app__header_h1{
+        font-size:38px;
+    }
+    #welcomeImg {
+        width:0px;
+    }
+    .app__header {
+        text-align: center;
+    }
+    
+
+}

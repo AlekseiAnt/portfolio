@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a table - La Cuisine</title>
+    <link rel="stylesheet" href="../../../static/css/home.css"/>
+    <link rel="stylesheet" href="../../../static/css/navbar.css"/>
+</head>
+<body>
+    <!--header-->
+    <div id="navbar">
+        <div class="app__navbar-logo">
+          <a href="/restaurant/"><img src="../../../static/assets/logo1.png" alt="logo" class='logo1' /></a>
+        </div>
+        <ul class='app__navbar-links'>
+          <li class='p__opensans'><a class='p__opensans' href="/restaurant/">Home</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/menu/">Menu</a></li>
+          <li class='p__opensans'><a  class='p__opensans' href="/restaurant/contact/">Contact</a></li>
+          </ul>
+          <div class='app__navbar-login'>
+            <a href="/restaurant/book/" class='p__opensans'>Book a table</a>
+          </div>
+          <div class='app_navbar-smallscreen'></div>
+    </div>
+    <!--end header-->
+    <style>
+        .booktitle {
+            width:100%;
+            padding:1rem;
+            background: rgb(54, 52, 46);
+            text-align: center;
+            color:rgb(255, 225, 180);
+            font-family:serif;
+            font-size: 45px;
+          }
+        .bookform {
+            color:#f1e6c5;
+            font-family: serif;
+            font-size: 14px;
+            width: 60vw;
+            max-width: 500px;
+            min-width: 300px;
+            margin: 1 auto;
+            padding-bottom: 1em;
+            margin-bottom: 8px;
+        }
+        input {
+            background: #252521;
+            font-size: 18px;
+            text-align: center;
+            place-content: center;
+            border: 1px solid #ffe69b95;
+            padding-top: 1em;
+            padding-bottom:0;
+
+        }
+        #formbook {
+            text-align: center; 
+            color:aliceblue;
+        }
+        @media screen and (max-width: 650px) {
+        
+            .booktitle {
+              font-size: 30px;
+            }
+        
+        }
+        
+        
+    </style>
+    <h1 class="booktitle">MAKE A RESERVATION</h1>
+    <form id ="formbook" method="POST">
+        {% csrf_token %}
+        <label class="bookform lab" for="customer_name">First and Last name: </label><br/>
+        <input  class="bookform" type="text" name="customer_name" id="customer_name" required/><br/>
+        <label  class="bookform lab" for="numguests">Number of guests: </label><br/>
+        <input  class="bookform" type="number" min="1" max="10" id="numguests" name="number_of_guests"/><br/>
+        <label  class="bookform lab" for="bookingDate">Date: </label><br/>
+        <input  class="bookform" type="date" id="bookingDate" name="bookingDate" required/><br/>
+        <label  class="bookform lab" for="bookingTime">Time (we are OPEN from 9am to 10pm): </label><br/>
+        <input  class="bookform" type="time" min="9:00" max="22:00" id="bookingTime" name="bookingTime" required/><br/>
+        <label  class="bookform lab" for="email">Your Email: </label><br/>
+        <input  class="bookform" placeholder="example@email.com" type="email" id="email" name="email" required/><br/>
+        <label  class="bookform lab" for="phone">Phone Number (format: 1112223333): </label><br/>
+        <input  class="bookform" type="number" id="phone" name="phone" min="1111111111" max="9999999999" required/><br/>
+        <button style="padding:0;"style="width:25%; padding:10px;" id="submitbutton" class="bookform lab" type="submit">SUBMIT A RESERVATION</button><br/>
+        <label class="bookform lab" style="background:rgba(0,0,0,0)">after submitting your reservation, you will receive an email or SMS confirmation</label><br/><br/>
+        <a style="background:rgba(0,0,0,0)" href="/restaurant/"><button type="button" class='custom_button backbutton bookform lab' style="width:20%; padding:3px; height:30px;">Return to Home Page</button></a>
+    </form>
+    
+    </body>
+    </html>
