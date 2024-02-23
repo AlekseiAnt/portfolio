@@ -1,0 +1,40 @@
+<!--Created on Feb 6, 2024 by Aleksei Antoniukov in Visual Studio Code on Macbook Pro 13"(2017)-->
+<!--tested in Chrome and Safari-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="mainDiv">
+        <!--start of the game - the form that asks for a usename-->
+        <form id="startform">
+            <h2 class="starter">Welcome to Tic Tac Toe!</h2>
+            <input id='username' type="text" placeholder="Username" class="starter" required/><br>
+            <input type="submit" id="startButton" class="starter" onclick='main(); return false' value="Start the game"></input>
+        </form>
+         <!--the game itself, the 3x3 board-->
+        <div id="gameboard">
+            <div class="cell" id="c0" ></div>
+            <div class="cell" id="c1" ></div>
+            <div class="cell" id="c2" ></div>
+            <div class="cell" id="c3" ></div>
+            <div class="cell" id="c4" ></div>
+            <div class="cell" id="c5" ></div>
+            <div class="cell" id="c6" ></div>
+            <div class="cell" id="c7" ></div>
+            <div class="cell" id="c8" ></div>
+        </div>
+    </div>
+     <!--the result message and the restart button, appears when the game ends-->
+    <div class="endGame" id="endGame">
+        <div class="endGame" id="result_message"></div>
+        <!--button responsible for reloading page-->
+        <button id="restartButton" onclick="window.location.href=window.location.href">Restart</button>
+    </div>
+</body>
+</html>

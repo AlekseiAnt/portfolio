@@ -1,0 +1,122 @@
+/*Created on Feb 6, 2024 by Aleksei Antoniukov in Visual Studio Code on Macbook Pro 13" (2017)*/
+/*tested in Chrome and Safari*/
+
+
+/*general page design and standart font used*/
+* {
+    background-color: rgb(53, 15, 20);
+    font-family: 'Courier New', Courier, monospace
+}
+
+/*creating a nice border around the playing area*/
+body {
+    border: 2px solid rgb(255, 255, 255);
+    margin: 5%;
+    padding: 20px;
+    text-align: center;
+}
+/*adding some margin for the form that shows up at the beginning*/
+#startform{
+    margin: 20% 0;
+}
+
+/*styling for text and button for both beginning and end game messages*/
+.starter, .endGame {
+    line-height: 25px;
+    margin-bottom: 15px;
+    color: white;
+    
+}
+
+/*modifying width and colour of the input and buttons themselves*/
+#username, #startButton, #restartButton {
+    width: 200px;
+    border: 2px solid white;
+    color: white;
+}
+/*hover for both buttons - start and restart*/
+#startButton:hover, #restartButton:hover {
+    background-color: rgb(178, 140, 140);
+    cursor: pointer;
+}
+
+/*styling the game board, making the cells 3x3 and center them all
+to have perfect squares*/
+#gameboard {
+    display: none;
+    grid-template-columns: repeat(3, auto);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 80vw;
+    height: 80vh;
+    
+}
+
+/*make the cells look distinct*/
+.cell {
+    
+    width: 130px;
+    height: 130px;
+    background-color: rgb(53, 15, 20);
+    border: 2px solid white;
+    
+    
+}
+/*make the cells change colour on hover and the cursor will 
+indicate the clickable area*/
+.cell:not(.o):not(.x):not(.gameEnded):hover {
+    background-color: rgb(188, 167, 167);
+    cursor: pointer;
+}
+
+/*this is responsible for showing X in the hovered cell*/
+.cell:not(.o):not(.x):not(.gameEnded):hover::before {
+    content: "X";
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100px;
+    color: rgb(69, 46, 46);
+}
+
+/*removing the outside borders of the board*/
+.cell:nth-child(1), .cell:nth-child(2), .cell:nth-child(3) {
+	border-top: none;
+}
+
+.cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
+	border-bottom: none;
+}
+
+.cell:nth-child(1), .cell:nth-child(4), .cell:nth-child(7) {
+	border-left: none;
+}
+
+.cell:nth-child(3), .cell:nth-child(6), .cell:nth-child(9) {
+	border-right: none;
+}
+
+/*if the X move was made on the cell, adding X in that cell*/
+.cell.x::before{
+    content: "X";
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100px;
+    color: white;
+   
+    
+}
+/*if the O move was made on the cell, adding O in that cell*/
+.cell.o::before{
+    content: "O";
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100px;
+    color: white;
+}
+
+/*some styling for end game message*/
+.endGame {
+    margin-bottom: 15px;
+    color: white;
+    font-size: 25px;
+    display: none;
+}
