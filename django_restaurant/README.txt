@@ -36,6 +36,18 @@ To run the project on a local network, you will need:
 	- to run the server locally, use a shell command "python3 manage.py runserver"
 	- to run the server and give other machines in the same network access to the website, run "python3 manage.py run server 0.0.0.0:8000" and use your machine's IP address instead of 0.0.0.0 when proceeding to the website from another machine in the same network).
 
+You might also need to use the following shell commands if the server is not running on your machine:
+	(you need to have pip or pip3 for these commands)
+	- pip3 install django
+	- pip3 install djangorestframework
+	- pip3 install mysqlclient
+	- python -m pip install Pillow
+	- pip install whitenoise
+
+
+
+
+
 The project was created by Aleksei Antoniukov in February 2024. To develop it, I used my knowledge and experience gained from completing the "Coursera Meta Back End Developer Professional Certificate". For the front-end part I also watched guides and applied techniques developed by https://youtube.com/@javascriptmastery
 
 If you have any questions, don't hesitate to contact me through aantoniukov@gmail.com
