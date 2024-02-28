@@ -1,0 +1,106 @@
+/* Created in February 2024 by Aleksei Antoniukov in Visual Studio Code on Macbook Pro 13" (2017), tested in Chrome and Safari */
+
+/* basic style for the entire body */
+
+body {
+    background: rgb(22, 17, 39);
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+}
+
+/* styling for the user's score div */
+#maindiv {
+    position:absolute;
+    left:1%;
+    top:0.1%;
+}
+
+/* styling for the start button which is also used for the restart button
+moving the button to the middle of the div - relative position */
+.startbutton {
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.5s;
+    padding: 0.8em;
+    width: 30%;
+    margin-top:30px;
+    position:relative;
+    left:34%;
+    color: rgb(26, 17, 47);
+    font-weight: bold;
+    font-size: 15px;
+    background: #cbdcef;
+    border: 1px solid #cbdcef;
+    margin-bottom:30px;
+}
+
+/* styling hover effects for all buttons, adding a glow effect and transition is for smooth hover effect appearance */
+.startbutton:hover {
+    transition: 0.5s;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    border: 1px solid #cbdcef;
+    cursor: pointer;
+    box-shadow: 0 0 2px  #cbdcef, 0 0 10px  #cbdcef, 0 0 20px  #cbdcef, 0 0 30px  #cbdcef;
+}
+
+/* styling for user's score text, making its z-index the highest so that pieman can move behind it */
+.count {
+
+    display: inline;
+    color: white;
+    z-index: 3;
+}
+
+/* pieman basic settings, its z-index is higher than pellets, so that when it eats them, it covers them*/
+#piemanImage {
+    width: 84px;
+    position: absolute;
+    left:10px;
+    top:100px;
+    z-index: 2;
+    background: rgba(0,0,0,0);
+}
+
+/* welcome and gameover messages divs */
+.message {
+    color:white;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    top: 20%;
+    left:35%;
+    border: 1px solid #cbdcef;
+    padding:20px;
+    background: rgb(11, 8, 25);
+}
+
+/* pellet - basic styling, z index is the lowest.*/
+.pellet {
+    width: 40px;
+    position: absolute;
+    z-index: 1;
+}
+
+/* centering the text in the messaegs */
+h2.welcome, h2.gameover {
+    text-align: center;
+}
+
+/* making the heading of the rules of the game in the welcome message bold */
+.head{
+    font-weight:700;
+}
+
+/* hide the pellet count, the pieman and the gameover message for the beginning of the game */
+#maindiv, #pieman, #gameover {
+    display: none;
+}
+
+/* making sure text does not have background other than the main one */
+h1, h2, p {
+    background: rgba(0,0,0,0);
+}

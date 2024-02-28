@@ -1,0 +1,49 @@
+<!-- Created in February 2024 by Aleksei Antoniukov in Visual Studio Code on Macbook Pro 13" (2017), tested in Chrome and Safari -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Man</title>
+
+    <!-- importing css, javascript files and jquery -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- start gameboard -->
+    <div class="maindiv game" id="maindiv">
+        <h2 class="count">Pellet Count: </h2><h2 id="count_var" class="count"></h2><br/>
+    </div>
+    
+    <div class="pieman game" id="pieman">
+        <img src="images/stopped.PNG" alt="pieman" id="piemanImage" />
+    </div>
+    <!-- end gameboard -->
+
+    <!-- start welcome message -->
+    <div id="welcome" class="message">
+        <h2 class="welcome">Welcome!</h2>
+        <p class="head">The rules of Pie-Man game are:<br/></p>
+
+           <p>- control Pie-Man's directions by pressing arrow keys on your keyboard<br/>
+            - Pieman can move around and collect the pellets<br/>
+            - once you collected a pellet - two more are created, but their lifetime gets shorter by 5% every time<br/>
+            - try to collect as many pellets as you can, before they all disappear <br/>
+            - have fun :)
+        </p>
+        <input type="submit" class="startbutton" id="startbutton" value="Play" />
+    </div>
+    <!-- end welcome message -->
+
+    <!-- start gameover message -->
+    <div id="gameover" class="message gameover">
+        <h2 class="head gameover">Game Over!</h2>
+        <p class="head count">Your score: </p><p id="final_count" class="head count"></p><br/>
+        <br/><p class="head count">Your highest score in this session: </p><p id="highest_score" class="head count"></p><br/>
+        <input type="submit" class="startbutton restartbutton" id="restartbutton" value="Try Again" />
+    </div>
+    <!-- end gameover message -->
+</body>
+</html>
