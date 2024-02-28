@@ -18,11 +18,13 @@ def menuItemsView(request):
     
     return render(request, 'restaurantApp/menu.html', context)
 
+# using slug to access the specific item from the menu
 def menuOneItemView(request, slug):
     menuOneItemView = Menu.objects.get(slug=slug)
     context = {'menuOneItemView' : menuOneItemView}
     return render(request, 'restaurantApp/menu_item.html', context)
 
+# making sure I receive all the information on POST request and create a new object
 def BookView(request):
     context={}
     if request.method=="POST" :

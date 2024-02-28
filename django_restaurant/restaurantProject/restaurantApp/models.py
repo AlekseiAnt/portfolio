@@ -5,6 +5,7 @@ import datetime
 #some of the code is based on the instructions from the Coursera Meta Back-End developer Capstone
 #course, which I've taken and fully completed
 
+# model for booking table contains all the information that it sends to the database
 class Book(models.Model):
     name = models.CharField(max_length=100)
     number_of_guests = models.IntegerField(default=2)
@@ -16,7 +17,7 @@ class Book(models.Model):
     class Meta:
         verbose_name = 'reservation'
         verbose_name_plural = 'reservations'
-    
+    # titles for the list of bookings in the admin panel
     def __str__(self):
         date = str(self.bookingDate)
         date = date[:11]
@@ -29,6 +30,7 @@ class Book(models.Model):
             conf = "NOT_confirmed"
         return f"{conf} | {date} at {time} for {cust_name} "
 
+# menu model, will be responsible for both, menu page and single menu items page
 class Menu(models.Model):
     id = models.DecimalField(primary_key=True, max_digits=10, decimal_places=0)
     title = models.CharField(max_length=100)
@@ -38,18 +40,20 @@ class Menu(models.Model):
     isPopular = models.BooleanField(default=False)
     image = models.ImageField(upload_to='meals/', default="")
     slug = models.SlugField(blank=True, null=True, unique=True)
+    #automatic creation of slugs
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Menu, self).save(*args, **kwargs)
         
-    
+    # titles for admin panel
     class Meta:
         verbose_name = 'Menu_Item'
         verbose_name_plural = 'Menu_Items'
     def __str__(self):
 	    return self.title
 
+# contact us model
 class ContactUs(models.Model):
     id = models.DecimalField(primary_key=True, max_digits=10, decimal_places=0)
     name = models.CharField(max_length=100, default="anonymous")
@@ -57,6 +61,8 @@ class ContactUs(models.Model):
     description = models.CharField(max_length=255)
     customerEmail = models.EmailField()
     isResolved = models.BooleanField(default=False)
+    
+    # titles for admin panel
     class Meta:
         verbose_name = 'Customer service request'
         verbose_name_plural = 'Customer service requests'
