@@ -1,0 +1,8 @@
+/* Created in April 2024 by Aleksei Antoniukov in Visual Studio Code on Macbook Pro 13" (2017), tested in Chrome */
+
+/* styling specifically for the search page, adding borders to the table */
+table, th, td {
+    padding:7px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}

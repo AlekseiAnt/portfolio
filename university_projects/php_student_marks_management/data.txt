@@ -1,0 +1,6 @@
+1712106347, aleksei, 2024-04-12, Fourth Year, 12, 2, 3, 3, 23, 22, 99, 56
+2222222, Michael, 2004-07-24, Second Year, HIST, 100, CMPT, 90, PHIL, 80, THEO, 100
+1712111673, Mike, 2024-04-04, Fourth Year, CMPT101, 100, HIST310, 95.5, INST200, 99, GEOG350, 100
+1712116560, Alex, 2000-04-03, Fourth Year, history, 50, theology, 90, philosophy, 70, computer science, 0
+1712116777, Aleksei, 2004-07-24, Second Year, CMPT, 100, HIST, 90, PHIL, 85, MATH, 0
+1712117400, Brad Pitt, 2010-09-02, Third Year, math, 100, theo, 90, cmpt, 0, hist, 87

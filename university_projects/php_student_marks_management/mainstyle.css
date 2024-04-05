@@ -1,0 +1,61 @@
+/* Created in April 2024 by Aleksei Antoniukov in Visual Studio Code on Macbook Pro 13" (2017), tested in Chrome */
+/* start navigation bar styling */
+#navbar, #navtitle{
+    width: 100%;
+    text-align: center;
+    background: rgb(196, 242, 255);
+    padding: 0.6rem 0;
+}
+#navtitle {
+    margin-bottom: 0;
+    background-color: #5a7694;
+    color: white;
+}
+.navbar-links {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    text-decoration: underline;
+}
+
+.navlist {
+    color: rgb(24, 20, 58);
+    margin: 0 1rem;
+}
+.navlist li {
+    color: white;
+    margin: 0 1rem;
+    
+}
+
+.navlist a:hover {
+    color: #5a7694;
+    cursor: pointer;
+}
+#welcomelink {
+    font-style: none;
+    text-decoration: none;
+    color: white;
+}
+/* end navigation bar styling */
+
+/* styling for messages that are used in different files. Helps to maintain the DRY(Don't Repeat Yourself) principle. */
+.msg {
+    text-align: center;
+    color: #405469;
+}
+
+.err {
+    color:#7a3e3e;
+}
+
+.suc {
+    color:#3e7a4b;
+}
+.lft {
+    margin:2%;
+    text-align:left;
+    
+}

@@ -1,0 +1,12 @@
+/* Created in April 2024 by Aleksei Antoniukov in Visual Studio Code on Macbook Pro 13" (2017), tested in Chrome */
+/* styling specifically for the show file */
+.list {
+    text-decoration: none;
+    color: black;
+    font-size: 15pt;
+}
+
+
+.list:hover {
+    color: rgb(134, 204, 223)
+}
